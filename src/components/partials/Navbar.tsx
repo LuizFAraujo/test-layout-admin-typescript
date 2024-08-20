@@ -1,14 +1,15 @@
 import React from 'react';
 
 interface NavbarProps {
-    onToggleSidebar: () => void;
+    onToggleSiderMenu: () => void;
+    onToggleSiderConfig: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar }) => {
+const Navbar: React.FC<NavbarProps> = ({ onToggleSiderMenu, onToggleSiderConfig }) => {
     return (
-        <nav className="bg-sky-700 text-white p-3">
+        <nav className="bg-sky-700 text-white p-4">
             <div className="container mx-auto flex items-center">
-                <button onClick={onToggleSidebar}
+                <button onClick={onToggleSiderMenu}
                     className="bg-sky-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-sky-500 transition duration-300">
                     Menu
                 </button>
@@ -16,6 +17,11 @@ const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar }) => {
                 <div className="text-2xl font-semibold ml-4">
                     ArjSYS
                 </div>
+
+                <button onClick={onToggleSiderConfig}
+                    className="ml-auto bg-sky-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-sky-500 transition duration-300">
+                    Config
+                </button>
             </div>
         </nav>
     );
